@@ -4,7 +4,7 @@ import NothingSelectedView from "../views/NothingSelectedView"
 import NoteView from "../views/NoteView"
 import { AddOutlined } from "@mui/icons-material"
 
-const JorunalPage = () => {
+const JournalPage = () => {
   return (
     <>
         <JournalLayout>
@@ -32,4 +32,4 @@ const JorunalPage = () => {
   )
 }
 
-export default JorunalPage
+export default JournalPage

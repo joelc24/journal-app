@@ -30,7 +30,7 @@ const LoginPage = () => {
 
     return (
         <AuthLayout title="Login">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className='animate__animated animate__fadeIn animate__faster'>
                 <Grid container>
                     <Grid item xs={12} sx={{ marginTop: 2 }}>
                         <TextField

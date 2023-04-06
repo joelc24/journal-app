@@ -3,7 +3,7 @@ import React from 'react'
 
 const AuthLayout = ({children, title = ''}) => {
   return (
-    <Grid 
+    <Grid
         container
         spacing={0}
         direction="column"
