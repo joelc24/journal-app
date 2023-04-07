@@ -14,13 +14,7 @@ const RegisterPage = () => {
 
     const isCheckingAuthenticated = useMemo(() => status == 'checking', [status])
 
-    const { handleSubmit, register, formState: { errors } } = useForm({
-        defaultValues: {
-            displayName: 'Joel Camargo',
-            email: 'joelcamargo255@gmail.com',
-            password: '123456'
-        }
-    })
+    const { handleSubmit, register, formState: { errors } } = useForm()
 
     const onSubmit = (data) =>{
         dispatch(startCreateUserWithEmailPassword(data))

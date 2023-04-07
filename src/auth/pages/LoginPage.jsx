@@ -11,12 +11,7 @@ const LoginPage = () => {
     const { status, errorMessage } = useSelector((state) => state.auth)
     
     const dispatch = useDispatch()
-    const { register, handleSubmit } = useForm({
-        defaultValues: {
-            email: 'joelcamargo255@gmail.com',
-            password: '123456'
-        }
-    })
+    const { register, handleSubmit, formState: { errors } } = useForm()
 
     const isAuthenticating = useMemo(() => status == 'checking', [status])
 
@@ -38,7 +33,9 @@ const LoginPage = () => {
                             type="email"
                             placeholder="correo@google.com"
                             fullWidth
-                            {...register('email')}
+                            error={ errors.email ? true : false }
+                            helperText={ errors.email && 'El correo es obligatorio' }
+                            {...register('email', { required: true })}
                         />
                     </Grid>
 
@@ -48,7 +45,9 @@ const LoginPage = () => {
                             type="password"
                             placeholder="Contraseña"
                             fullWidth
-                            {...register('password')}
+                            error={ errors.password ? true : false }
+                            helperText={ errors.password && 'La contraseña debe contener minimo seis caracteres' }
+                            {...register('password', { required: true, minLength: 6 })}
                         />
                     </Grid>
 
